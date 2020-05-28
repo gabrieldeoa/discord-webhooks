@@ -1,0 +1,5 @@
+# Global
+.env
+
+# directories
+node_modules/
