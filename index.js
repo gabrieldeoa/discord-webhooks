@@ -1,10 +1,16 @@
-import Discord from 'discord.js';
-import dotenv from 'dotenv';
-dotenv.config();
+import WebhookClient from './src/WebhookClient';
+import SendSimpleMessage from './src/SendSimpleMessage';
+import SendEmbedMessage from './src/SendEmbedMessage';
 
-const webhookClient = new Discord.WebhookClient(
-    process.env.DWB_ID,
-    process.env.DWB_TOKEN
+const webhookClient = WebhookClient();
+
+SendSimpleMessage(webhookClient, `Hi, good evening`);
+
+SendEmbedMessage(
+  webhookClient,
+  {
+    title: 'Embed Test',
+    description: 'This is a embed message test',
+    color: '#ff3300'
+  }
 );
-
-webhookClient.send(`Hello World`);
