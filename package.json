@@ -1,0 +1,10 @@
+{
+  "name": "discord-webhooks",
+  "version": "1.0.0",
+  "description": "Simple use of Discord WebHooks",
+  "main": "index.js",
+  "repository": "https://github.com/gabrieldeoa/discord-webhooks.git",
+  "author": "Gabriel de O. Araujo",
+  "license": "MIT",
+  "private": false
+}
