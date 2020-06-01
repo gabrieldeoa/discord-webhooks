@@ -1,16 +1,13 @@
-import WebhookClient from './src/WebhookClient';
-import SendSimpleMessage from './src/SendSimpleMessage';
-import SendEmbedMessage from './src/SendEmbedMessage';
+import SendEmbedMessageByApi from './src/with-discord-api/SendEmbedMessageByApi';
 
-const webhookClient = WebhookClient();
-
-SendSimpleMessage(webhookClient, `Hi, good evening`);
-
-SendEmbedMessage(
-  webhookClient,
-  {
-    title: 'Embed Test',
-    description: 'This is a embed message test',
-    color: '#ff3300'
-  }
-);
+(async () => {
+  const success = await SendEmbedMessageByApi(
+    { 
+      title: 'Bom dia'
+    }
+  )
+  if(success)
+    console.log('Sucesso ao enviar mensagem para o Discord')
+  else
+    console.message('Falha ao enviar mensagem para o Discord.')
+})();
